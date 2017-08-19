@@ -1,26 +1,23 @@
-This is a starter template for [Ionic](http://ionicframework.com/docs/) projects.
+# Bhamashah srijan yojna (Developed for rajasthan hackathon 2.0)
 
-## How to use this template
+This the complete app Based on bhamashah sijan yojna connected with firebase .
 
-*This template does not work on its own*. The shared files for each starter are found in the [ionic2-app-base repo](https://github.com/ionic-team/ionic2-app-base).
+App consist of some awesome features such as chatting, mailing, img-viewing and others.
 
-To use this template, either create a new ionic project using the ionic node.js utility, or copy the files from this repository into the [Starter App Base](https://github.com/ionic-team/ionic2-app-base).
+Note: this is a complete app and can be used by others.
 
-### With the Ionic CLI:
 
-Take the name after `ionic2-starter-`, and that is the name of the template to be used when using the `ionic start` command below:
+Instructions to run:
+     open CMD ->
+-> clone the project from github.
+1) in the project directory run cmd:
+     npm install
+  # this will install all the dependencies.
 
-```bash
-$ sudo npm install -g ionic cordova
-$ ionic start myBlank blank
-```
+2) if plugins are not automatically installed then install all the plugins that are metioned in package.json.
+   # create your app on firebase and paste the config. in firebase config file.
 
-Then, to run it, cd into `myBlank` and run:
+3) now run cmd:
+    ionic cordova run android --prod.
 
-```bash
-$ ionic cordova platform add ios
-$ ionic cordova run ios
-```
-
-Substitute ios for android if not on a Mac.
-
+    thanks.

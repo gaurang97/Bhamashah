@@ -3,28 +3,67 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { File } from '@ionic-native/file';
+import { FileChooser } from '@ionic-native/file-chooser';
+import { FilePath } from '@ionic-native/file-path';
+
+import { config } from './app.firebaseconfig';
+
+import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireModule } from 'angularfire2';
 
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
+import { AuthProvider } from '../providers/auth/auth';
+import { UserProvider } from '../providers/user/user';
+import { ImghandlerProvider } from '../providers/imghandler/imghandler';
+import { RequestsProvider } from '../providers/requests/requests';
+import { ChatProvider } from '../providers/chat/chat';
+import { EmailComposer } from '@ionic-native/email-composer';
+import { Camera, CameraOptions } from '@ionic-native/camera';
+import { InAppBrowser} from '@ionic-native/in-app-browser';
+
+import { NgxQRCodeModule } from 'ngx-qrcode2';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import { LocalNotifications } from '@ionic-native/local-notifications';
+import { IonicImageViewerModule } from 'ionic-img-viewer';
 
 @NgModule({
   declarations: [
-    MyApp,
-    HomePage
+    MyApp
+  
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp, {tabsPlacement: 'top'}),
+    NgxQRCodeModule,
+    IonicImageViewerModule,
+    AngularFireModule.initializeApp(config)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,
-    HomePage
+    MyApp
+   
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    File,
+    FilePath,
+    FileChooser,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AuthProvider,
+    AngularFireAuth,
+    UserProvider,
+    ImghandlerProvider,
+    UserProvider,
+    RequestsProvider,
+    ChatProvider,
+    Camera,
+    EmailComposer,
+    InAppBrowser,
+   
+    BarcodeScanner,
+    LocalNotifications
   ]
 })
 export class AppModule {}
